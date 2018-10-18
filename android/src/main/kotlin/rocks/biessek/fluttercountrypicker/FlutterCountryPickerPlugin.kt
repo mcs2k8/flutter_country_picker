@@ -31,8 +31,8 @@ class FlutterCountryPickerPlugin(): MethodCallHandler {
 
   private fun getAllCountryNames(isoCodes: ArrayList<String>?): HashMap<String, String> {
     val localCountries = HashMap<String, String>()
-    for (isoCode in isoCodes) {
-      localCountries[isoCode] = Locale("", isoCode).displayCountry
+    isoCodes?.forEach {
+      localCountries[it] = Locale("", it).displayCountry
     }
     return localCountries
   }
